@@ -32,19 +32,13 @@ def groupByRow(items):
 
 # Looks through dataset and removes any that have degree type "Practical". Use as needed.
 def filterByProgramType(data):
-    excludedDegreeType = ["Practical", "Associate", ""]
+    excludedDegreeType = ["Practical"]  # Add degree types that you don't want in here...
 
     filteredDataset = []
     for d in data:
         if d[1] not in excludedDegreeType:
             filteredDataset.append(d)
     return filteredDataset
-
-    # filteredDataset = []
-    # for d in data:
-    #     if d[1] != "Practical":
-    #         filteredDataset.append(d)
-    # return filteredDataset
 
 
 def mergeDatasets(d1, d2):
@@ -112,7 +106,7 @@ for state in statesList:
             exit(1)
 
 
-# Filter Datasets, uncomment if needed.
+# Filter Datasets, comment-out if unneeded.
 dataset = filterByProgramType(data=dataset)
 
 
